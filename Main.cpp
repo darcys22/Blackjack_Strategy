@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
 	
 	while(cr != "q")	
 	{
-		Interface.Display(Board(mode)); // Interface.getmode returns the mode to be played in as an integer 1-5,
+		Interface.Display(new Board(mode)); // Interface.getmode returns the mode to be played in as an integer 1-5,
 								// board then creates the dealers and hole cards
 
 		if(Interface.GetPlay != Board.CorrectPlay(Board))

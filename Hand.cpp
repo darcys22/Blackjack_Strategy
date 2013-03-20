@@ -12,7 +12,7 @@ class Hand extends Card
 	{
 		return Card one, two;
 	}
-	
+
 	public bool CheckSplit
 	{
 		if(one == two)

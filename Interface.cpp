@@ -11,6 +11,12 @@ class Interface
 
 	public void Display(Board board)
 	{
+		cout << "The dealer shows: "
+		cout << //function to show dealer
+		cout << "/n/n Your hand is:
+		cout << //function to show your hands
+		cout << "/n-------/n"
+		cout << "Do you (1) Hit, (2) Stand, (3) Double, or (4) Split?
 	}
 
 	public short GetPlay
