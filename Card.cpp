@@ -1,47 +1,66 @@
+#include <cstdlib>
+
+using namespace std;
+
 class Card
 {
 	
-	private int Number
+	private int Number;
 
-	__init
+	Card
 	{
-		Number = Random(1..12)
+		srand((unsigned)time(0));
+		Number = (rand()%13);
 	}
 
 	public int GetCard
 	{
-		return card;
+		return Number;
 	}
 
-       public String HandToString
+       public String CardToString
        {
 	Switch(int)
+	{
 		case 1:
-			return "Ace"
+			return "Ace";
+			break;
 		case 2:
-			return "Two"
+			return "Two";
+			break;
 		case 3: 
-			return "Three"
+			return "Three";
+			break;
 		case 4:
-			return "Four"
+			return "Four";
+			break;
 		case 5:
-			return "Five"
+			return "Five";
+			break;
 		case 6:
-			return "Six"
+			return "Six";
+			break;
 		case 7:
-			return "Seven"
+			return "Seven";
+			break;
 		case 8:
-			return "Eight"
+			return "Eight";
+			break;
 		case 9:
-			return "Nine"
+			return "Nine";
+			break;
 		case 10:
-			return "Ten"
+			return "Ten";
+			break;
 		case 11:
-			return "Jack"
+			return "Jack";
+			break;
 		case 12: 
-			return "Queen"
-		case 13:
-			return "King"
+			return "Queen";
+			break;
+		case 0:
+			return "King";
+			break;
         }
 
 } 
