@@ -7,7 +7,7 @@ class Card
 	
 	private int Number;
 
-	Card
+	public Card
 	{
 		srand((unsigned)time(0));
 		Number = (rand()%13);

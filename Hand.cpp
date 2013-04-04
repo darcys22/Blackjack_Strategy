@@ -2,7 +2,7 @@ class Hand extends Card
 {
 	private Card one, two;
 
-	__init
+	public Hand
 	{
 		one.GetCard;
 		two.GetCard;

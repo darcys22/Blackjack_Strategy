@@ -1,13 +1,15 @@
 class Board
 {
 
-	private Card Dealer;
-	private Hand Hole;
+	private Card dealer;
+	private Hand hole;
+	int mode;
 
 	public Board()
 	{
-		Dealer.GetCard;
-		Hole.GetCards;
+		cout << "What mode would you like to play in?"
+		cin >> mode;
+		hole.SetMode(mode);
 	}
 
 	public short CorrectPlay(Board b)

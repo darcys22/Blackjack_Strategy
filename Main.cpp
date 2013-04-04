@@ -9,8 +9,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	char cr;
-	short int mode;
+
 	
 	if (argc > 1)
 	{
@@ -27,14 +26,15 @@ int main(int argc, char* argv[])
 	}	
 
 	
-	while(cr != "q")	
+	while(char cr != "q")	
 	{
-		Interface.Display(new Board(mode)); // Interface.getmode returns the mode to be played in as an integer 1-5,
+		board = new Board();
+		Interface.Display(board)// Interface.getmode returns the mode to be played in as an integer 1-5,
 								// board then creates the dealers and hole cards
 
-		if(Interface.GetPlay != Board.CorrectPlay(Board))
+		if(Interface.GetPlay != board.CorrectPlay())
 		{
-			Interface.Incorrect(Board);
+			Interface.Incorrect(board);
 		}
 		else
 		{
