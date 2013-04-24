@@ -9,7 +9,8 @@ class Board
 	{
 		cout << "What mode would you like to play in?"
 		cin >> mode;
-		hole.SetMode(mode);
+		dealer = new Card();
+		hole = new Hand(mode);
 	}
 
 	public short CorrectPlay(Board b)

@@ -2,10 +2,38 @@ class Hand extends Card
 {
 	private Card one, two;
 
-	public Hand
+	public Hand(int mode)
 	{
-		one.GetCard;
-		two.GetCard;
+		bool correct_mode = false;
+		while(!correct_mode)
+		{
+			one = new Card;
+			two = new Card;
+			switch(mode)
+				case 0:
+					correct_mode = true;
+					break;
+				case 1:
+					if (!CheckSplit && !CheckAce && !high)
+						correct_mode = true;
+						break;
+				case 2:
+					
+					if (!CheckSplit && !CheckAce && high)
+						correct_mode = true;
+						break;
+				case 3:
+					
+					if (!CheckSplit && CheckAce && !high)
+						correct_mode = true;
+						break;
+				case 4:
+					
+					if (CheckSplit && !CheckAce && !high)
+						correct_mode = true;
+						break;
+		}
+
 	}
 
 	public Card GetCards
