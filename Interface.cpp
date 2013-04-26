@@ -11,19 +11,22 @@ class Interface
 
 	public void Display(Board board)
 	{
-		cout << "The dealer shows: "
-		cout << //function to show dealer
-		cout << "/n/n Your hand is:
-		cout << //function to show your hands
-		cout << "/n-------/n"
-		cout << "Do you (1) Hit, (2) Stand, (3) Double, or (4) Split?
+		cout << "The dealer shows: ";
+		cout << board.DealerCard();
+		cout << "/n/n Your hand is:";
+		cout << board.HoleCards();
 	}
 
-	public short GetPlay
-	{
+	public int GetPlay()
+	{	
+		int play;
+		cout << "/n-------/n";
+		cout << "Do you (1) Hit, (2) Stand, (3) Double, or (4) Split?";
+		cin >> play;
+		return play;
 	}
 
-	public void Incorrect(short int correct)
+	public void Incorrect(int correct)
 	{
 		cout << "That play was incorrect, the correct play was to: ";
 		switch(correct)

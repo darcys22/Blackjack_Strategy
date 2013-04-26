@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
 
 		if(Interface.GetPlay != board.CorrectPlay())
 		{
-			Interface.Incorrect(board);
+			Interface.Incorrect(board.CorrectPlay());
 		}
 		else
 		{
