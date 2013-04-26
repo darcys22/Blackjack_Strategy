@@ -1,3 +1,5 @@
+#include <string>
+
 class Board
 {
 
@@ -13,7 +15,22 @@ class Board
 		hole = new Hand(mode);
 	}
 
-	public short CorrectPlay(Board b)
+	public short CorrectPlay()
 	{
+	}
+	
+	public String DealerCard()
+	{
+		return dealer.CardToString;
+	}
+
+	public String HoleCards()
+	{
+		String temp;
+
+		temp.append(hole.FirstCard);
+		temp.append(" and a ");
+		temp.append(hole.SecondCard);
+		return temp
 	}
 }

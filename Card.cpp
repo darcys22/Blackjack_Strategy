@@ -18,6 +18,26 @@ class Card
 		return Number;
 	}
 
+	public bool isAce
+	{
+		if (Number = 1)
+			return true;
+		else
+			return false;
+	}
+
+	public int Value
+	{
+		int value
+		if (Number = 1)
+			return 11;
+		else if ( Number = 0 || Number > 10)
+			return 10;
+		else
+			return Number;
+	} 
+	
+
        public String CardToString
        {
 	Switch(int)

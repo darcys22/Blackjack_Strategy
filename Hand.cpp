@@ -36,33 +36,38 @@ class Hand extends Card
 
 	}
 
-	public Card GetCards
+	public bool CheckSplit()
 	{
-		return Card one, two;
-	}
-
-	public bool CheckSplit
-	{
-		if(one == two)
+		if(one.CardToString == two.CardToString)
 			return true;
 		else
 			return false;
 	}	
 
-	public bool CheckAce
+	public bool CheckAce()
 	{
-		if((one==1 || two == 1) && !CheckSplit)
+		if((one.CardToString=="Ace" || two.CardToString == "Ace") && !CheckSplit)
 			return true;
 		else
 			return false;
 	}
 
-	public bool high
+	public bool high()
 	{
-		if( (one+two >= 12) && !CheckAce && !CheckSplit)
+		if( (one.Value + two.Value >= 12) && !CheckAce && !CheckSplit)
 			return true;
 		else
 			return false;
+	}
+		
+	public String FirstCard()
+	{
+		return one.CardToString;
+	}
+
+	public String SecondCard()
+	{
+		return two.CardToString;
 	}
 
 }
