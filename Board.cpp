@@ -5,7 +5,7 @@ class Board
 
 	private Card dealer;
 	private Hand hole;
-	int mode;
+	private	int mode;
 
 	public Board()
 	{
@@ -32,5 +32,20 @@ class Board
 		temp.append(" and a ");
 		temp.append(hole.SecondCard);
 		return temp
+	}
+
+	public int GetSection()
+	{
+		return mode;
+	}
+
+	public int GetDealer()
+	{
+		return (dealer.Value() - 2);
+	}
+
+	public int GetHand()
+	{
+		return 0 //A value that fits into the strategy array
 	}
 }
