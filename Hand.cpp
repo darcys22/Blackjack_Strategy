@@ -9,34 +9,28 @@ class Hand extends Card
 		{
 			one = new Card;
 			two = new Card;
-			switch(mode)
-				case 0:
-					correct_mode = true;
-					break;
-				case 1:
-					if (!CheckSplit && !CheckAce && !high)
-						correct_mode = true;
-						break;
-				case 2:
-					
-					if (!CheckSplit && !CheckAce && high)
-						correct_mode = true;
-						break;
-				case 3:
-					
-					if (!CheckSplit && CheckAce && !high)
-						correct_mode = true;
-						break;
-				case 4:
-					
-					if (CheckSplit && !CheckAce && !high)
-						correct_mode = true;
-						break;
+			if (mode = 0 || mode = getMode())
+				correct_mode = true;
 		}
 
 	}
+	
+	public int getMode()
+	{
+		if (!CheckSplit && !CheckAce && !high)
+			return 1;			//Mode one is where the hand value is greater than 11
+		
+		if (!CheckSplit && !CheckAce && high)
+			return 2;			// two is where the hand value is 5-11
 
-	public bool CheckSplit()
+		if (!CheckSplit && CheckAce && !high)  
+			return 3;			// three is when there is an ace
+
+		if (CheckSplit && !CheckAce && !high)
+			return 4;			// four is where you have two of the same cards
+	}	
+
+	private bool CheckSplit()
 	{
 		if(one.CardToString == two.CardToString)
 			return true;
@@ -44,7 +38,7 @@ class Hand extends Card
 			return false;
 	}	
 
-	public bool CheckAce()
+	private bool CheckAce()
 	{
 		if((one.CardToString=="Ace" || two.CardToString == "Ace") && !CheckSplit)
 			return true;
@@ -52,13 +46,19 @@ class Hand extends Card
 			return false;
 	}
 
-	public bool high()
+	private bool high()
 	{
-		if( (one.Value + two.Value >= 12) && !CheckAce && !CheckSplit)
+		if( (handValue() >= 12) && !CheckAce && !CheckSplit)
 			return true;
 		else
 			return false;
 	}
+
+	public int handValue()
+	{
+		return (one.Value + two.Value);
+	}
+	
 		
 	public String FirstCard()
 	{

@@ -136,8 +136,8 @@ class Strategy()
 	
 	}
 
-	int CorrectPlay(Board board)
+	public int CorrectPlay(Board board)
 	{
-		return array3D[sect][deal][hand]
+		return (array3D[board.GetSection][board.GetDealer][board.GetHand] + 1)
 	}
 }
