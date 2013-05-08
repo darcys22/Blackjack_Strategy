@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <board.h>
+#include <interface.h>
 
 using namespace std;
 
@@ -29,8 +31,7 @@ int main(int argc, char* argv[])
 	while(char cr != "q")	
 	{
 		board = new Board(mode);
-		Interface.Display(board)// Interface.getmode returns the mode to be played in as an integer 1-5,
-								// board then creates the dealers and hole cards
+		Interface.Display(board);
 
 		if(Interface.GetPlay != board.CorrectPlay())
 		{
