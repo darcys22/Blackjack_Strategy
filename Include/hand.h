@@ -6,10 +6,12 @@
 
 class Hand
 {
-private: Card one, two;
+private: 
+	Card one;
+	Card two;
 public:
 
-	Hand();
+	void SetMode(int mode);
 	int getMode();
 	bool CheckSplit();
 	bool CheckAce();
@@ -17,6 +19,6 @@ public:
 	int handValue();
 	std::string FirstCard();
 	std::string SecondCard();
-}
+};
 
 #endif

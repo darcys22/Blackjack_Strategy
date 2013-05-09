@@ -4,8 +4,8 @@
 #include <cstdlib>
 #include <board.h>
 #include <interface.h>
+#include <string.h>
 
-using namespace std;
 
 //-----------------
 
@@ -13,35 +13,37 @@ int main(int argc, char* argv[])
 {
 	int mode;
 	
-	if (argc > 1)
+	if (argc > 2)
 	{
-		cout << "Too many Arguments";
-		exit;
+		std::cout << "Too many Arguments";
+		(void)exit;
 	}
-	else if (argc = 0)
+	else if (argc == 1)
 	{
 		mode = 0;
 	}
 	else
 	{
-		mode = atoi(argv[1]);
-	}	
+		mode = atoi(argv[0]);
+	};	
 
-	
-	while(char cr != "q")	
+	char cr[2] = "l";
+	char check[2] = "q";
+	Interface interface;
+	while(strcmp(cr, check) != 0)	
 	{
-		board = new Board(mode);
-		Interface.Display(board);
+		Board board(mode);
+		interface.Display(board);
 
-		if(Interface.GetPlay != board.CorrectPlay())
+		if(interface.GetPlay() != board.CorrectPlay())
 		{
-			Interface.Incorrect(board.CorrectPlay());
+			interface.Incorrect(board.CorrectPlay());
 		}
 		else
 		{
-			Interface.Correct;
+			interface.Correct();
 		}
-		cout << "Anykey to continue, q to quit"
-		cin.get(cr);
+		std::cout << "Anykey to continue, q to quit";
+		std::cin.getline(cr,1);
 	}
 }

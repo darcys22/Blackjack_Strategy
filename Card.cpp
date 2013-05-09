@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Card::Card()
+void Card::Randomize()
 {
 	srand((unsigned)time(0));
 	Number = (rand()%13);
@@ -17,18 +17,18 @@ int Card::GetCard()
 
 bool Card::isAce()
 {
-	if (Number = 1)
+	if (Number == 1)
 		return true;
 	else
 		return false;
 }
 
-int Card:Value()
+int Card::Value()
 {
-	int value
-	if (Number = 1)
+	int value;
+	if (Number == 1)
 		return 11;
-	else if ( Number = 0 || Number > 10)
+	else if ( Number == 0 || Number > 10)
 		return 10;
 	else
 		return Number;
@@ -37,7 +37,7 @@ int Card:Value()
 
 string Card::CardToString()
 {
-Switch(int)
+switch(Number)
 {
 	case 1:
 		return "Ace";
@@ -78,4 +78,8 @@ Switch(int)
 	case 0:
 		return "King";
 		break;
+	default:
+		return NULL;
+		break;
+}
 }

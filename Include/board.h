@@ -12,13 +12,13 @@ private:
  	Card dealer;
 	Hand hole;
 	Strategy strategy;
+	int GetSection();
+	int GetDealer();
+	int GetHand();
 public:
-	Board();
+	Board(int mode);
 	int CorrectPlay();
 	std::string DealerCard();
 	std::string HoleCards();
-	int GetSection();
-	int GetDealer();
-	int GetHand;
 };
 #endif

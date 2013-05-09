@@ -8,15 +8,14 @@
 #define DOUBLE 2
 #define SPLIT 3
 
-#include <board.h>
 #include <vector>
 
 class Strategy
 {
-private: vector<vector<vector<unsigned char> > > array3D;
+private: std::vector<std::vector<std::vector<unsigned char> > > array3D;
 public:
 	Strategy();
-	int CorrectStrategy(Board board);
-}
+	int CorrectStrategy(int section,int dealer,int hand);
+};
 
 #endif

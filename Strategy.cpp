@@ -1,6 +1,5 @@
 #include <strategy.h>
 #include <vector>
-#include <board.h>
 using std::vector;
 
 Strategy::Strategy()
@@ -11,11 +10,13 @@ Strategy::Strategy()
 		for (int i = 0; i < SECTION; ++i) 
 			array3D[i].resize(DEALER);
 
-	for (int j = 0; j < DEALER; ++j){
+	for (int j = 0; j < DEALER; ++j)
+	{
 		array3D[0][j].resize(9); //Section 1 has 9 possible hands for the player [12-20]
 		array3D[1][j].resize(7); //Section 2 has 7 possible hands for the player [5-11]
 		array3D[2][j].resize(9); //Section 3 has 9 possible hands for the player [A,2 - A,10]
 		array3D[3][j].resize(10);//Section 4 has 10 possible hands for the player [2,2 - A,A]
+	
 
 	// Put the default value of HIT in
 		for (int k = 0; k < 9; ++k)
@@ -32,16 +33,16 @@ Strategy::Strategy()
 
 
 	// 17+ is always a STAND
-		for (int j = 0; j < DEALER; ++J)
+		for (int j = 0; j < DEALER; ++j)
 		{
-			for (k = 5; k < 9; ++k)
+			for (int k = 5; k < 9; ++k)
 				array3D[0][j][k] = STAND;
 		}
 
 	// 12-16 is STAND if the DEALER < 7
 		for (int j = 0; j < 5; ++j)
 		{
-			for (k = 0; k < 5; ++k)
+			for (int k = 0; k < 5; ++k)
 				array3D[0][j][k] = STAND;
 		}
 		// UNLESS hand is 12 then you HIT on Dealer with 2 or 3
@@ -51,7 +52,7 @@ Strategy::Strategy()
 	// 10 & 11 is DOUBLE unless the DEALER has and ace
 		for (int j = 0; j < (DEALER - 1); ++j)
 		{
-			for (k = 5; k < 7; ++k)
+			for (int k = 5; k < 7; ++k)
 				array3D[1][j][k] = DOUBLE;
 		}
 
@@ -77,7 +78,7 @@ Strategy::Strategy()
 
 	// With some exceptions to the above
 		// if dealer has 9+ you HIT with an ACE
-		for (int j = 7; j < DEALER; ++J)
+		for (int j = 7; j < DEALER; ++j)
 			array3D[2][j][5] = HIT;
 
 		// if the dealer has a 3 you HIT with a kicker lower than 6
@@ -122,10 +123,11 @@ Strategy::Strategy()
 			for (int k = 0; k < 2; ++k)
 				array3D[3][j][k] = SPLIT;
 		}
+	}
 
-}
+};
 
-int Strategy::CorrectStrategy(Board board)
+int Strategy::CorrectStrategy(int section, int dealer, int hand)
 {
-	return (array3D[board.GetSection][board.GetDealer][board.GetHand] + 1)
-}
+	return (array3D[section][dealer][hand] + 1);
+};

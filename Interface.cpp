@@ -42,9 +42,11 @@ void Interface::Incorrect(int correct)
 			cout << "split";
 			break;
 	}
+	return;
 }
 
-void Correct()
+void Interface::Correct()
 {
-	cout << "That is the correct play"
+	cout << "That is the correct play";
+	return;
 }
