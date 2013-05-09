@@ -6,7 +6,6 @@
 class Interface
 {
 public:
-	Interface();
 	void Display(Board);
 	int GetPlay();
 	void Incorrect(int correct);
