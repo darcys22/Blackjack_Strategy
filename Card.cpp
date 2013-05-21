@@ -1,12 +1,15 @@
 #include <card.h>
 #include <cstdlib>
 #include <string>
+//#include <iostream>
 
-using namespace std;
+Card::Card()
+{
+	srand(time(0));
+}
 
 void Card::Randomize()
 {
-	srand((unsigned)time(0));
 	Number = (rand()%13);
 }
 
@@ -35,8 +38,9 @@ int Card::Value()
 } 
 
 
-string Card::CardToString()
+std::string Card::CardToString()
 {
+
 switch(Number)
 {
 	case 1:
@@ -79,7 +83,7 @@ switch(Number)
 		return "King";
 		break;
 	default:
-		return NULL;
+		return "NULL";
 		break;
 }
 }

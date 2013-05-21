@@ -9,7 +9,7 @@ void Hand::SetMode(int mode)
 	{
 		one.Randomize();
 		two.Randomize();
-		if (mode == 0 || mode == getMode())
+		if ((mode == 0) || (mode == getMode()))
 			correct_mode = true;
 	}
 

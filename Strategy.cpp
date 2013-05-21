@@ -1,4 +1,5 @@
 #include <strategy.h>
+#include <stdio.h>
 
 const char* const Strategy::strategy[] = 
 	{ 	
@@ -49,9 +50,11 @@ const char* const Strategy::strategy[] =
 
 int Strategy::CorrectStrategy(int section, int dealer, int hand)
 {
+	printf("section: %d, dealer %d, hand %d",section,dealer,hand);
 	const int position[] = { 8,15,24,34 };
 
 	const char* temp = strategy[(position[section - 1] - hand)];
+	printf(" temp %s", temp);
 	return Strat_to_Hand(temp[dealer]);  
 };
 
@@ -59,10 +62,10 @@ int Strategy::Strat_to_Hand(const char strat)
 {
 	switch(strat)
 	{
-		case 'S':
+		case 'H':
 			return 0;
 			break;
-		case 'H':
+		case 'S':
 			return 1;
 			break;
 		case 'D':

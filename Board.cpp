@@ -7,6 +7,7 @@
 Board::Board(int mode)
 {
 	hole.SetMode(mode);
+	dealer.Randomize();
 };
 
 int Board::CorrectPlay()
@@ -24,7 +25,7 @@ std::string Board::HoleCards()
 	std::string temp;
 
 	temp.append(hole.FirstCard());
-	temp.append(" and a ");
+	temp.append(" and ");
 	temp.append(hole.SecondCard());
 	return temp;
 };

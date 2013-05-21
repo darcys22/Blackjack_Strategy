@@ -5,8 +5,10 @@
 
 class Card
 {
-private: int Number;
+private:
+	int Number;
 public:
+	Card();
 	void Randomize();
 	int GetCard();
 	bool isAce();

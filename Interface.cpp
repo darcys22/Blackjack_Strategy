@@ -9,24 +9,24 @@ using namespace std;
 
 void Interface::Display(Board board)
 {
-	cout << "The dealer shows: ";
+	cout << "\nThe dealer shows: ";
 	cout << board.DealerCard();
-	cout << "/n/n Your hand is:";
+	cout << "\n\nYour hand is: ";
 	cout << board.HoleCards();
 }
 
 int Interface::GetPlay()
 {	
 	int play;
-	cout << "/n-------/n";
+	cout << "\n-------\n";
 	cout << "Do you (1) Hit, (2) Stand, (3) Double, or (4) Split?";
-	cin >> play;
+	cin >> (play - 1);
 	return play;
 }
 
 void Interface::Incorrect(int correct)
 {
-	cout << "That play was incorrect, the correct play was to: ";
+	cout << "\nThat play was incorrect, the correct play was to: ";
 	switch(correct)
 	{
 		case 0:
@@ -47,6 +47,6 @@ void Interface::Incorrect(int correct)
 
 void Interface::Correct()
 {
-	cout << "That is the correct play";
+	cout << "\nThat is the correct play";
 	return;
 }

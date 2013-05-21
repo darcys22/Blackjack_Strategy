@@ -1,7 +1,8 @@
-CC = clang -g -c -IInclude
+CC = gcc -g -c -IInclude
 
 poker : board.o card.o hand.o interface.o main.o strategy.o
 	g++ -o poker Board.o Card.o Hand.o Interface.o Main.o Strategy.o  
+	make clean
 
 main.o : Main.cpp
 	$(CC) Main.cpp

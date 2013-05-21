@@ -43,7 +43,8 @@ int main(int argc, char* argv[])
 		{
 			interface.Correct();
 		}
-		std::cout << "Anykey to continue, q to quit";
+		std::cout << "\nAnykey to continue, q to quit";
+		std::cout << "\n---------------\n";
 		std::cin.getline(cr,1);
 	}
 }
