@@ -20,8 +20,8 @@ int Interface::GetPlay()
 	int play;
 	cout << "\n-------\n";
 	cout << "Do you (1) Hit, (2) Stand, (3) Double, or (4) Split?";
-	cin >> (play - 1);
-	return play;
+	cin >> (play);
+	return (play - 1);
 }
 
 void Interface::Incorrect(int correct)

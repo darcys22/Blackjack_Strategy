@@ -5,6 +5,7 @@
 #include <board.h>
 #include <interface.h>
 #include <string.h>
+#include "BufferToggle.cpp"
 
 
 //-----------------
@@ -27,10 +28,10 @@ int main(int argc, char* argv[])
 		mode = atoi(argv[0]);
 	};	
 
-	char cr[2] = "l";
-	char check[2] = "q";
+	BufferToggle bt;
 	Interface interface;
-	while(strcmp(cr, check) != 0)	
+	char ch = ' ';
+	while(ch != 'q')	
 	{
 		Board board(mode);
 		interface.Display(board);
@@ -45,6 +46,6 @@ int main(int argc, char* argv[])
 		}
 		std::cout << "\nAnykey to continue, q to quit";
 		std::cout << "\n---------------\n";
-		std::cin.getline(cr,1);
+		ch = bt.read();
 	}
 }

@@ -1,4 +1,4 @@
-CC = gcc -g -c -IInclude
+CC = clang -g -c -IInclude
 
 poker : board.o card.o hand.o interface.o main.o strategy.o
 	g++ -o poker Board.o Card.o Hand.o Interface.o Main.o Strategy.o  
